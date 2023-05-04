@@ -1,0 +1,10 @@
+### crear proyecto firebase
+  -> ir a la consola y crear proyecto
+
+### instalar el paquete de firebase para npm
+  -> npm i firebase
+
+### crear archivo de configuracion de firebase
+  -> firebase.ts
+  -> ir a la consola de firebase - configuracion - agregar firebase a aplicacion - web
+  -> copiar codigo al archivo de configuracion de firebase
