@@ -1,11 +1,16 @@
 import { createContext, useContext } from 'react'
+import { UserCredential, createUserWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../firebase'
 
+// * interface paral los datos que puede recibir authContext
 interface AuthContextType {
-  user: {
-    login: boolean
-  }
+  // user: {
+  //   login: boolean
+  // },
+  signup: (email: string, password: string) => void
 }
 
+// * interface para las props de AuthProvider -> children
 interface AuthProviderProps {
   children: React.ReactNode;
 }
@@ -21,12 +26,13 @@ export const useAuth = () => {
 export const authContext = createContext<AuthContextType | null>(null)
 
 export function AuthProvider ({ children }: AuthProviderProps) {
-  const user = {
-    login: true
-  }
+  // * la funcion retorna un UserCredential por promesa
+  // * los valores se reciben desde el formario de registro
+  // * en el componente RegisterForm se manejan los errores
+  const signup = (email: string, password: string): Promise<UserCredential> => createUserWithEmailAndPassword(auth, email, password)
 
   return (
-    <authContext.Provider value={{ user }}>
+    <authContext.Provider value={{ signup }}>
       {children}
     </authContext.Provider>
   )

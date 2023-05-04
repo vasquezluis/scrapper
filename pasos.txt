@@ -8,3 +8,13 @@
   -> firebase.ts
   -> ir a la consola de firebase - configuracion - agregar firebase a aplicacion - web
   -> copiar codigo al archivo de configuracion de firebase
+
+### crea contexto para el usuario
+
+### crear formularios
+
+### buscar funciones de creacion de usuario con firebase
+ -> createUserWithEmailAndPassword 
+
+### configurar metodo de autenticacion en la consola de firebase
+ -> compilacion -> authentication
